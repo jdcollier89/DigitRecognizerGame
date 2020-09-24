@@ -39,4 +39,7 @@ def check_clear_button(clear_btn, grid, mouse_x, mouse_y):
 def check_submit_button(submit_btn, grid, mouse_x, mouse_y):
     button_clicked = submit_btn.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked:
-        print("Submit Button Clicked")
+        array = grid.convert_grid()
+        # Make prediction from array
+        # Print prediction to screen
+        print(array)

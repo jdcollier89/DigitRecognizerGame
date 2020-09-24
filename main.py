@@ -5,6 +5,7 @@ from grid import Grid
 from game_state import GameState
 from button import Button
 
+
 def run_game():
     pygame.init()
     ai_settings = Settings()

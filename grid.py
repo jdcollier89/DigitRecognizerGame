@@ -53,3 +53,9 @@ class Grid:
     def draw_grid(self):
         for cell in self.Grid.sprites():
             cell.draw_cell()
+
+    def convert_grid(self):
+        grid = np.zeros((self.yCount, self.xCount))
+        for cell in self.Grid.sprites():
+            grid[cell.y_id][cell.x_id] = cell.return_drawn()
+        return grid.astype(int)

@@ -12,6 +12,7 @@ class Cell(Sprite):
         self.y_id = y_id
 
         self.color = (255, 255, 255) # Start out as white cell
+        self.fill_color = (0,0,0)
 
         self.rect = pygame.Rect(xpos, ypos, self.cellSize,
                                 self.cellSize)
@@ -22,3 +23,10 @@ class Cell(Sprite):
     def draw_cell(self):
         """Draw the bullet to the screen"""
         pygame.draw.rect(self.screen, self.color, self.rect)
+
+    def return_drawn(self):
+        if self.color == self.fill_color:
+            output = 1
+        else:
+            output = 0
+        return output
