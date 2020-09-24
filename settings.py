@@ -15,3 +15,5 @@ class Settings:
 
         # Drawing tool
         self.brush_size = 3
+
+        self.model_path = 'mnist_model.model'
