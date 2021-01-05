@@ -2,7 +2,7 @@ import sys
 import pygame
 
 
-def check_events(game_state, grid, submit_btn, clear_btn, model):
+def check_events(game_state, grid, submit_btn, clear_btn, pred_window, model):
     """Respond to key presses and mouse events"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -11,8 +11,8 @@ def check_events(game_state, grid, submit_btn, clear_btn, model):
             check_keydown_events(event, grid)
         elif event.type == pygame.MOUSEBUTTONDOWN:
             mouse_x, mouse_y = pygame.mouse.get_pos()
-            check_submit_button(submit_btn, grid, mouse_x, mouse_y, model)
-            check_clear_button(clear_btn, grid, mouse_x, mouse_y)
+            check_submit_button(submit_btn, grid, pred_window, mouse_x, mouse_y, model)
+            check_clear_button(clear_btn, grid, pred_window, mouse_x, mouse_y)
             game_state.hold_mouse()
         elif event.type == pygame.MOUSEBUTTONUP:
             game_state.release_mouse()
@@ -30,16 +30,18 @@ def check_mouse_events(game_state, grid):
         grid.check_cell_clicked(mouse_x, mouse_y, game_state)
 
 
-def check_clear_button(clear_btn, grid, mouse_x, mouse_y):
+def check_clear_button(clear_btn, grid, pred_window, mouse_x, mouse_y):
     button_clicked = clear_btn.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked:
         grid.create_grid()
+        pred_window.reset_window()
 
 
-def check_submit_button(submit_btn, grid, mouse_x, mouse_y, model):
+def check_submit_button(submit_btn, grid, pred_window, mouse_x, mouse_y, model):
     button_clicked = submit_btn.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked:
         array = grid.convert_grid()
         class_pred, pred_score = model.predict_class(array)
+        pred_window.update_window(class_pred, pred_score)
         # Print prediction to screen
-        print('I think you drew a ', class_pred, '. I am ', pred_score,'% confident')
+        #print('I think you drew a ', class_pred, ' . I am ', pred_score,'% confident')
