@@ -43,5 +43,3 @@ def check_submit_button(submit_btn, grid, pred_window, mouse_x, mouse_y, model):
         array = grid.convert_grid()
         class_pred, pred_score = model.predict_class(array)
         pred_window.update_window(class_pred, pred_score)
-        # Print prediction to screen
-        #print('I think you drew a ', class_pred, ' . I am ', pred_score,'% confident')

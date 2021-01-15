@@ -12,7 +12,7 @@ class Cell(Sprite):
         self.y_id = y_id
 
         self.color = (255, 255, 255) # Start out as white cell
-        self.fill_color = (0,0,0)
+        self.fill_color = (0, 0, 0)
 
         self.rect = pygame.Rect(xpos, ypos, self.cellSize,
                                 self.cellSize)

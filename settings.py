@@ -13,7 +13,6 @@ class Settings:
         self.box_width = 1000
         self.box_height = 500
 
-        # Drawing tool
-        self.brush_size = 3
-
         self.model_path = 'mnist_model.model'
+
+        self.show_grid = True
