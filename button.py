@@ -22,11 +22,11 @@ class Button:
         if col == 'c': # Clear Button
             self.button_color = (220, 80, 80)
             self.rect.centerx = self.screen_rect.centerx + 110
-            self.rect.centery = self.screen_rect.centery + 265
+            self.rect.centery = self.screen_rect.centery + 305
         elif col == 's': # Submit Button
             self.button_color = (80, 220, 80)
             self.rect.centerx = self.screen_rect.centerx - 110
-            self.rect.centery = self.screen_rect.centery + 265
+            self.rect.centery = self.screen_rect.centery + 305
 
     def prep_msg(self, msg):
         """Turn msg into a rendered image and center text on the button"""

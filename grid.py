@@ -6,7 +6,7 @@ from cell import Cell
 
 class Grid:
 
-    def __init__(self, boxSize, xPos, yPos, screen):
+    def __init__(self, boxSize, xPos, yPos, screen, game_state):
         self.pos = (xPos, yPos)
         self.screen = screen
 
@@ -17,7 +17,12 @@ class Grid:
         self.yCount = 28
 
         self.cellSize = int(boxSize/self.xCount)
-        self.drawSize = self.cellSize - 1
+
+        if game_state.show_grid:
+            self.drawSize = self.cellSize - 1
+        else:
+            self.drawSize = self.cellSize
+
         self.brushSize = 2
         self.x_grid = np.zeros(self.xCount)
         self.y_grid = np.zeros(self.yCount)
@@ -85,9 +90,13 @@ class Grid:
 
     def set_show_grid(self):
         self.drawSize = self.cellSize - 1
+        for cell in self.Grid.sprites():
+            cell.draw_rect(self.drawSize)
 
     def set_hide_grid(self):
         self.drawSize = self.cellSize
+        for cell in self.Grid.sprites():
+            cell.draw_rect(self.drawSize)
 
     def set_brush_size(self, brush_size):
         self.brushSize = brush_size

@@ -5,7 +5,7 @@ class Settings:
 
         # Screen Settings
         self.screen_width = 440
-        self.screen_height = 600
+        self.screen_height = 700
         self.bg_color = (50, 50, 50)
         self.box_color = (255, 255, 255)
 
@@ -14,5 +14,3 @@ class Settings:
         self.box_height = 500
 
         self.model_path = 'mnist_model.model'
-
-        self.show_grid = True

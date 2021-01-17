@@ -10,12 +10,15 @@ class Cell(Sprite):
         self.cellSize = cellSize
         self.x_id = x_id
         self.y_id = y_id
+        self.xpos = xpos
+        self.ypos = ypos
 
         self.color = (255, 255, 255) # Start out as white cell
         self.fill_color = (0, 0, 0)
 
-        self.rect = pygame.Rect(xpos, ypos, self.cellSize,
-                                self.cellSize)
+        self.draw_rect(self.cellSize)
+        #self.rect = pygame.Rect(xpos, ypos, self.cellSize,
+        #                        self.cellSize)
 
     def draw_on_cell(self, game_state):
         self.color = game_state.draw_color
@@ -30,3 +33,7 @@ class Cell(Sprite):
         else:
             output = 0
         return output
+
+    def draw_rect(self, draw_size):
+        self.rect = pygame.Rect(self.xpos, self.ypos, draw_size,
+                                draw_size)
