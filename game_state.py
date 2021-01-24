@@ -1,8 +1,11 @@
 
 class GameState:
-    def __init__(self):
+    def __init__(self, settings):
         self.mouse_down = False
         self.show_grid = True
+        self.paint_color = settings.paint_color
+        self.erase_color = settings.grid_color
+
         self.set_draw()
 
     def hold_mouse(self):
@@ -13,8 +16,8 @@ class GameState:
 
     def set_draw(self):
         self.draw_active = True
-        self.draw_color = (0, 0, 0)
+        self.draw_color = self.paint_color
 
     def set_erase(self):
         self.draw_active = False
-        self.draw_color = (255, 255, 255)
+        self.draw_color = self.erase_color

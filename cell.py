@@ -17,8 +17,6 @@ class Cell(Sprite):
         self.fill_color = (0, 0, 0)
 
         self.draw_rect(self.cellSize)
-        #self.rect = pygame.Rect(xpos, ypos, self.cellSize,
-        #                        self.cellSize)
 
     def draw_on_cell(self, game_state):
         self.color = game_state.draw_color

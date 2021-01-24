@@ -11,7 +11,7 @@ class Grid:
         self.screen = screen
 
         self.background_col = (255, 255, 255)
-        self.paint_col = (0, 0, 0)
+        #self.paint_col = (0, 0, 0)
 
         self.xCount = 28
         self.yCount = 28
@@ -61,6 +61,10 @@ class Grid:
 
             # Brush Size = 1
             #cell_clicked = cell.rect.collidepoint(mouse_x, mouse_y)
+
+            ## Create a RECT for the drawing and check for collision
+            ## between new RECT and the cells
+            #########################
 
             cell_clicked1 = cell.rect.collidepoint(mouse_x-offset, mouse_y-offset)
             cell_clicked2 = cell.rect.collidepoint(mouse_x+offset, mouse_y-offset)
