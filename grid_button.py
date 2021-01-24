@@ -1,4 +1,3 @@
-import pygame.font
 from button import Button
 
 
@@ -9,7 +8,7 @@ class GridButton(Button):
         super().__init__(screen, self.width, self.height, self.font_size)
 
         self.rect.centerx = self.screen_rect.centerx - 110
-        self.rect.centery = self.screen_rect.centery + 90
+        self.rect.centery = self.screen_rect.centery + 95
         self.button_color = (150, 150, 150)
 
         # Set the button message content

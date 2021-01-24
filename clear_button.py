@@ -1,5 +1,5 @@
 from button import Button
-import pygame
+
 
 class ClearButton(Button):
 
@@ -13,6 +13,6 @@ class ClearButton(Button):
         self.button_color = (220, 80, 80)
 
         self.rect.centerx = self.screen_rect.centerx + 110
-        self.rect.centery = self.screen_rect.centery + 305
+        self.rect.centery = self.screen_rect.centery + 300
         self.msg = 'Clear'
         self.prep_msg()
