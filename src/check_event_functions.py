@@ -1,6 +1,6 @@
 import sys
 import pygame
-import click_button_functions as cb
+from src import click_button_functions as cb
 
 
 def check_events(game_state, grid, submit_btn, clear_btn,

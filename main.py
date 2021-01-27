@@ -1,16 +1,16 @@
 import pygame
 
-from classes.settings import Settings
-from classes.game_state import GameState
-from model import Model
-from classes.grid import Grid
-from classes.prediction_window import PredictionWindow
-from classes.submit_button import SubmitButton
-from classes.clear_button import ClearButton
-from classes.grid_button import GridButton
-from classes.draw_button import DrawButton
-from classes.erase_button import EraseButton
-import check_event_functions as ce
+from src.settings import Settings
+from src.game_state import GameState
+from src.model import Model
+from src.grid import Grid
+from src.prediction_window import PredictionWindow
+from src.submit_button import SubmitButton
+from src.clear_button import ClearButton
+from src.grid_button import GridButton
+from src.draw_button import DrawButton
+from src.erase_button import EraseButton
+from src import check_event_functions as ce
 
 
 def draw_buttons(clear_btn, submit_btn, grid_btn, draw_btn, erase_btn):
