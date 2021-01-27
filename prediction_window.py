@@ -9,7 +9,7 @@ class PredictionWindow:
         self.screen_rect = screen.get_rect()
         self.ai_settings = ai_settings
 
-        self.width, self.height = 420, 120
+        self.width, self.height = 410, 120
         self.win_color = (100, 100, 100)
 
         # Font settings

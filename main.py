@@ -38,7 +38,7 @@ def run_game():
     erase_btn = EraseButton(screen, game_state)
     # Brush Size - 1/2/3
 
-    grid = Grid(400, 25, 25, screen, game_state)
+    grid = Grid(400, 25, 20, screen, game_state)
     pred_window = PredictionWindow(ai_settings, screen)
 
     while True: # Game Loop

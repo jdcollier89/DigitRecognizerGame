@@ -11,8 +11,8 @@ class SubmitButton(Button):
         self.text_color = (250, 250, 250)
         self.button_color = (80, 220, 80)
 
-        self.rect.centerx = self.screen_rect.centerx - 110
-        self.rect.centery = self.screen_rect.centery + 290
+        self.rect.centerx = self.screen_rect.centerx - 105
+        self.rect.centery = self.screen_rect.centery + 291
         self.msg = 'Submit'
 
         self.prep_msg()

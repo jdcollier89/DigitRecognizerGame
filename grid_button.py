@@ -7,8 +7,8 @@ class GridButton(Button):
         self.font_size = 30
         super().__init__(screen, self.width, self.height, self.font_size)
 
-        self.rect.centerx = self.screen_rect.centerx - 110
-        self.rect.centery = self.screen_rect.centery + 110
+        self.rect.centerx = self.screen_rect.centerx - 105
+        self.rect.centery = self.screen_rect.centery + 108
         self.button_color = (150, 150, 150)
 
         # Set the button message content

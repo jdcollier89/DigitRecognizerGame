@@ -12,8 +12,8 @@ class EraseButton(Button):
         if game_state.draw_active:
             self.button_color = self.inactive_button_color
 
-        self.rect.centerx = self.screen_rect.centerx + 170
-        self.rect.centery = self.screen_rect.centery + 110
+        self.rect.centerx = self.screen_rect.centerx + 165
+        self.rect.centery = self.screen_rect.centery + 108
 
         self.msg = "Erase"
         self.prep_msg()

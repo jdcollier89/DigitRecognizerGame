@@ -12,7 +12,7 @@ class ClearButton(Button):
         self.text_color = (250, 250, 250)
         self.button_color = (220, 80, 80)
 
-        self.rect.centerx = self.screen_rect.centerx + 110
-        self.rect.centery = self.screen_rect.centery + 290
+        self.rect.centerx = self.screen_rect.centerx + 105
+        self.rect.centery = self.screen_rect.centery + 291
         self.msg = 'Clear'
         self.prep_msg()

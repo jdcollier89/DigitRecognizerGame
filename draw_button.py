@@ -12,8 +12,8 @@ class DrawButton(Button):
         if game_state.draw_active:
             self.button_color = self.active_button_color
 
-        self.rect.centerx = self.screen_rect.centerx + 80
-        self.rect.centery = self.screen_rect.centery + 110
+        self.rect.centerx = self.screen_rect.centerx + 75
+        self.rect.centery = self.screen_rect.centery + 108
 
         self.msg = "Draw"
         self.prep_msg()
