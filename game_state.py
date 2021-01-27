@@ -5,6 +5,7 @@ class GameState:
         self.show_grid = True
         self.paint_color = settings.paint_color
         self.erase_color = settings.grid_color
+        self.brush_size = 2
 
         self.set_draw()
 
@@ -21,3 +22,6 @@ class GameState:
     def set_erase(self):
         self.draw_active = False
         self.draw_color = self.erase_color
+
+    def set_brush_size(self, brush_size):
+        self.brush_size = brush_size

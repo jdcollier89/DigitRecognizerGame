@@ -1,6 +1,6 @@
 import numpy as np
 import pygame
-from pygame.sprite import Sprite, Group
+from pygame.sprite import Group
 from cell import Cell
 
 
@@ -11,7 +11,6 @@ class Grid:
         self.screen = screen
 
         self.background_col = (255, 255, 255)
-        #self.paint_col = (0, 0, 0)
 
         self.xCount = 28
         self.yCount = 28
@@ -23,7 +22,6 @@ class Grid:
         else:
             self.drawSize = self.cellSize
 
-        self.brushSize = 2
         self.x_grid = np.zeros(self.xCount)
         self.y_grid = np.zeros(self.yCount)
 
@@ -51,35 +49,16 @@ class Grid:
                 self.Grid.add(cell)
 
     def check_cell_clicked(self, mouse_x, mouse_y, game_state):
+        """Checks which cells are within the 'drawing region' and
+         changes color of these cells"""
+
+        offset = self.cellSize * (game_state.brush_size - 1) / 2 + 1
+        draw_rect = pygame.Rect(mouse_x - offset, mouse_y - offset, offset * 2,
+                                offset * 2)
+
+        # Loop over each cell and check for collision with draw_rect (centered on mouse)
         for cell in self.Grid.sprites():
-            if self.brushSize == 1:
-                offset = 0
-            if self.brushSize == 2:
-                offset = self.cellSize/2
-            elif self.brushSize == 3:
-                offset = self.cellSize
-
-            # Brush Size = 1
-            #cell_clicked = cell.rect.collidepoint(mouse_x, mouse_y)
-
-            ## Create a RECT for the drawing and check for collision
-            ## between new RECT and the cells
-            #########################
-
-            cell_clicked1 = cell.rect.collidepoint(mouse_x-offset, mouse_y-offset)
-            cell_clicked2 = cell.rect.collidepoint(mouse_x+offset, mouse_y-offset)
-            cell_clicked3 = cell.rect.collidepoint(mouse_x, mouse_y-offset)
-
-            cell_clicked4 = cell.rect.collidepoint(mouse_x-offset, mouse_y)
-            cell_clicked5 = cell.rect.collidepoint(mouse_x+offset, mouse_y)
-            cell_clicked6 = cell.rect.collidepoint(mouse_x, mouse_y)
-
-            cell_clicked7 = cell.rect.collidepoint(mouse_x-offset, mouse_y+offset)
-            cell_clicked8 = cell.rect.collidepoint(mouse_x+offset, mouse_y+offset)
-            cell_clicked9 = cell.rect.collidepoint(mouse_x, mouse_y+offset)
-
-            if cell_clicked1 or cell_clicked2 or cell_clicked3 or cell_clicked4 or cell_clicked5\
-                    or cell_clicked6 or cell_clicked7 or cell_clicked8 or cell_clicked9:
+            if cell.rect.colliderect(draw_rect):
                 cell.draw_on_cell(game_state)
 
     def draw_grid(self):
@@ -101,6 +80,3 @@ class Grid:
         self.drawSize = self.cellSize
         for cell in self.Grid.sprites():
             cell.draw_rect(self.drawSize)
-
-    def set_brush_size(self, brush_size):
-        self.brushSize = brush_size

@@ -18,7 +18,7 @@ class PredictionWindow:
         # Prep the blank opening window
         self.rect = pygame.Rect(0, 0, self.width, self.height)
         self.rect.centerx = self.screen_rect.centerx
-        self.rect.centery = self.screen_rect.centery + 190
+        self.rect.centery = self.screen_rect.centery + 195
         self.reset_window()
 
     def prep_window(self, msg1, msg2, msg3):

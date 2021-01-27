@@ -5,9 +5,8 @@ class Settings:
 
         # Screen Settings
         self.screen_width = 440
-        self.screen_height = 700
+        self.screen_height = 660
         self.bg_color = (50, 50, 50)
-        #self.box_color = (255, 255, 255)
 
         self.paint_color = (0, 0, 0)
         self.grid_color = (255, 255, 255)

@@ -13,7 +13,7 @@ class DrawButton(Button):
             self.button_color = self.active_button_color
 
         self.rect.centerx = self.screen_rect.centerx + 80
-        self.rect.centery = self.screen_rect.centery + 95
+        self.rect.centery = self.screen_rect.centery + 110
 
         self.msg = "Draw"
         self.prep_msg()
