@@ -1,7 +1,7 @@
 import numpy as np
 import pygame
 from pygame.sprite import Group
-from cell import Cell
+from .cell import Cell
 
 
 class Grid:

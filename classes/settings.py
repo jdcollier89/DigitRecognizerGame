@@ -15,4 +15,4 @@ class Settings:
         self.box_width = 1000
         self.box_height = 500
 
-        self.model_path = 'mnist_model.model'
+        self.model_path = './mnist_model.model'

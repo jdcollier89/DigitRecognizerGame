@@ -1,4 +1,4 @@
-from settings import Settings
+from classes.settings import Settings
 from model import Model
 
 ai_settings = Settings()
